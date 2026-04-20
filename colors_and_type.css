@@ -1,0 +1,268 @@
+/* ============================================================
+   RADICI — Design Tokens
+   Warm, editorial, organic. Coastal + wellness aesthetic.
+   No bold. Contrast through size + space, never weight.
+   ============================================================ */
+
+/* Brand display face — BN Cringe Serif (uploaded by user).
+   Body serif (EB Garamond) + labels (DM Sans) remain on Google Fonts. */
+@font-face {
+  font-family: 'BN Cringe Serif';
+  src: url('fonts/BNCringeSerifLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BN Cringe Serif';
+  src: url('fonts/BNCringeSerifMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* BN Cringe does not ship an italic cut — fall back to Cormorant italic
+   for the brand's single-word italic keyword flourish in headlines. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  /* ---------- BRAND COLORS ---------- */
+  /* Primary palette — soft, earthy, sun-bleached */
+  --cream:      #F2EDE5;  /* main background */
+  --ivory:      #FAF7F2;  /* card / inner surfaces */
+  --sand:       #D4C5AE;  /* alt section bg, warm beige */
+  --olive:      #4A5240;  /* primary dark, headings on light */
+  --sage:       #8A9A7B;  /* secondary accent, labels, checks */
+  --terracotta: #A85430;  /* primary CTA, community */
+  --amber:      #C8862A;  /* secondary CTA, done-for-you accent */
+  --coffee:     #2C2318;  /* body text, dark section bg */
+
+  /* ---------- SEMANTIC SURFACE TOKENS ---------- */
+  --bg:            var(--cream);
+  --bg-alt:        var(--sand);
+  --bg-dark:       var(--coffee);
+  --bg-olive:      var(--olive);
+  --surface:       var(--ivory);
+  --surface-dark:  #362C1F;  /* slightly lifted coffee */
+
+  /* ---------- TEXT TOKENS ---------- */
+  --fg:            var(--coffee);       /* body on light */
+  --fg-muted:      rgba(44,35,24,0.64); /* secondary body */
+  --fg-soft:       rgba(44,35,24,0.44); /* tertiary / captions */
+  --fg-on-dark:    var(--cream);
+  --fg-on-dark-muted: rgba(242,237,229,0.78);
+  --fg-on-dark-soft:  rgba(242,237,229,0.56);
+  --fg-heading:    var(--olive);
+  --fg-heading-dark: var(--cream);
+
+  /* ---------- LINE / BORDER ---------- */
+  --line:         rgba(212,197,174,0.70);  /* sand, 0.5px hairline */
+  --line-strong:  rgba(74,82,64,0.24);
+  --line-on-dark: rgba(242,237,229,0.18);
+
+  /* ---------- TYPE ---------- */
+  --font-display: 'BN Cringe Serif', 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-display-italic: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-body:    'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+  --font-label:   'DM Sans', 'Jost', ui-sans-serif, system-ui, sans-serif;
+
+  /* Weights — never above 500 */
+  --w-light:   300;
+  --w-regular: 400;
+  --w-medium:  500;
+
+  /* Type scale */
+  --fs-label:    12px;   /* all-caps eyebrow */
+  --fs-caption:  13px;
+  --fs-body-s:   14px;
+  --fs-body:     17px;
+  --fs-body-l:   19px;
+  --fs-h4:       24px;
+  --fs-h3:       32px;
+  --fs-h2:       44px;
+  --fs-h1:       72px;   /* standard H1 */
+  --fs-display:  180px;  /* oversized hero — HAVEN-scale, full-bleed */
+  --fs-display-s: 120px; /* secondary display */
+
+  --lh-tight:   1.08;
+  --lh-snug:    1.2;
+  --lh-body:    1.85;   /* generous — key brand rule */
+  --lh-loose:   2.0;
+
+  --tracking-label:  0.14em;
+  --tracking-caps:   0.10em;
+  --tracking-display: -0.01em;
+
+  /* ---------- SPACING ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;   /* section padding-y */
+  --s-11: 160px;
+
+  /* ---------- RADII ---------- */
+  /* All radii are 0 — ESSENZA DIGITALE uses square corners only.
+     Editorial, architectural, honest. No pills, no rounded cards. */
+  --r-0: 0px;
+  --r-1: 0px;
+  --r-2: 0px;
+  --r-3: 0px;
+  --r-pill: 0px;
+
+  /* ---------- SHADOWS (very restrained) ---------- */
+  --shadow-soft:  0 1px 2px rgba(44,35,24,0.04), 0 8px 24px rgba(44,35,24,0.05);
+  --shadow-card:  0 1px 1px rgba(44,35,24,0.03), 0 12px 40px rgba(44,35,24,0.06);
+  --shadow-lift:  0 2px 6px rgba(44,35,24,0.08), 0 24px 60px rgba(44,35,24,0.10);
+
+  /* ---------- MOTION ---------- */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast:   160ms;
+  --dur:        240ms;
+  --dur-slow:   400ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPOGRAPHY — element-level defaults
+   ============================================================ */
+
+html { color: var(--fg); background: var(--bg); }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--w-regular);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings — always display serif, always light/regular weight */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: var(--w-light);
+  color: var(--fg-heading);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); line-height: 1.05; }
+h2 { font-size: var(--fs-h2); line-height: 1.08; }
+h3 { font-size: var(--fs-h3); line-height: 1.15; }
+h4 { font-size: var(--fs-h4); line-height: 1.25; }
+
+/* Decorative italic — use <em> or .italic-key inside headings */
+h1 em, h2 em, h3 em, h4 em,
+.italic-key {
+  font-family: var(--font-display-italic);
+  font-style: italic;
+  font-weight: var(--w-light);
+}
+
+/* Oversized display (hero) */
+.display {
+  font-family: var(--font-display);
+  font-weight: var(--w-light);
+  font-size: var(--fs-display);
+  line-height: 1.02;
+  letter-spacing: var(--tracking-display);
+}
+
+/* Body paragraph */
+p {
+  margin: 0 0 1em 0;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+p.lead {
+  font-size: var(--fs-body-l);
+  line-height: 1.7;
+  color: var(--fg);
+}
+
+/* Eyebrow / all-caps label */
+.label,
+.eyebrow {
+  font-family: var(--font-label);
+  font-size: var(--fs-label);
+  font-weight: var(--w-regular);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--sage);
+  display: inline-block;
+}
+
+/* Caption */
+.caption {
+  font-family: var(--font-label);
+  font-size: var(--fs-caption);
+  color: var(--fg-soft);
+  letter-spacing: 0.02em;
+}
+
+/* Links */
+a {
+  color: var(--terracotta);
+  text-decoration: none;
+  border-bottom: 0.5px solid currentColor;
+  padding-bottom: 1px;
+  transition: opacity var(--dur) var(--ease-soft);
+}
+a:hover { opacity: 0.7; }
+
+/* Utility */
+hr.hairline {
+  border: 0;
+  border-top: 0.5px solid var(--line);
+  margin: var(--s-7) 0;
+}
+
+/* ============================================================
+   PAPER TEXTURE — applied to section backgrounds
+   Subtle grain, warm-paper feel. Use class "paper" on sections.
+   ============================================================ */
+.paper {
+  position: relative;
+  isolation: isolate;
+}
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.17  0 0 0 0 0.14  0 0 0 0 0.09  0 0 0 0.28 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.paper.light::before {
+  opacity: 0.35;
+}
+.paper.dark::before {
+  opacity: 0.40;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.90  0 0 0 0 0.82  0 0 0 0.20 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.paper > * { position: relative; z-index: 1; }
+
+/* Dark-section overrides */
+.on-dark, .on-olive, .on-coffee {
+  color: var(--fg-on-dark);
+}
+.on-dark h1, .on-dark h2, .on-dark h3, .on-dark h4,
+.on-olive h1, .on-olive h2, .on-olive h3, .on-olive h4,
+.on-coffee h1, .on-coffee h2, .on-coffee h3, .on-coffee h4 {
+  color: var(--fg-heading-dark);
+}
+.on-dark .label, .on-olive .label, .on-coffee .label,
+.on-dark .eyebrow, .on-olive .eyebrow, .on-coffee .eyebrow {
+  color: var(--sage);
+}
+.on-dark a, .on-olive a, .on-coffee a { color: var(--cream); }

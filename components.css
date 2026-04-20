@@ -1,0 +1,262 @@
+/* ============================================================
+   RADICI — Components
+   Buttons, cards, form fields, decorative elements.
+   Depends on colors_and_type.css
+   ============================================================ */
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: var(--w-regular);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 18px 30px;
+  min-height: 52px;
+  border-radius: var(--r-pill);
+  border: 0.5px solid transparent;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease-soft),
+              background-color var(--dur) var(--ease-soft),
+              color var(--dur) var(--ease-soft),
+              border-color var(--dur) var(--ease-soft),
+              opacity var(--dur) var(--ease-soft);
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+.btn:hover { transform: scale(1.02); }
+.btn:active { transform: scale(0.99); }
+
+.btn .arrow {
+  display: inline-block;
+  transition: transform var(--dur) var(--ease-soft);
+}
+.btn:hover .arrow { transform: translateX(3px); }
+
+/* Variants */
+.btn--terracotta {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-color: var(--terracotta);
+}
+.btn--terracotta:hover { background: #8E4526; border-color: #8E4526; }
+
+.btn--amber {
+  background: var(--amber);
+  color: var(--coffee);
+  border-color: var(--amber);
+}
+.btn--amber:hover { background: #B07420; }
+
+.btn--olive {
+  background: var(--olive);
+  color: var(--cream);
+  border-color: var(--olive);
+}
+.btn--olive:hover { background: #3C4334; }
+
+.btn--outline-cream {
+  background: transparent;
+  color: var(--cream);
+  border: 0.5px solid var(--cream);
+}
+.btn--outline-cream:hover { background: rgba(242,237,229,0.08); }
+
+.btn--outline-olive {
+  background: transparent;
+  color: var(--olive);
+  border: 0.5px solid var(--olive);
+}
+.btn--outline-olive:hover { background: rgba(74,82,64,0.06); }
+
+.btn--outline-amber {
+  background: transparent;
+  color: var(--amber);
+  border: 0.5px solid var(--amber);
+}
+.btn--outline-amber:hover { background: rgba(200,134,42,0.08); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--terracotta);
+  border: 0;
+  padding: 12px 0;
+  letter-spacing: 0.08em;
+}
+.btn--ghost:hover { opacity: 0.7; }
+
+/* Nav pill (small) */
+.btn--pill {
+  min-height: 40px;
+  padding: 12px 22px;
+  font-size: 12px;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: var(--surface);
+  border: 0.5px solid var(--line);
+  border-radius: var(--r-3);
+  padding: var(--s-6);
+  transition: transform var(--dur) var(--ease-soft),
+              box-shadow var(--dur) var(--ease-soft);
+}
+.card--quiet { background: transparent; }
+.card--dark {
+  background: var(--surface-dark);
+  border-color: var(--line-on-dark);
+  color: var(--fg-on-dark);
+}
+.card--lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- FORM FIELDS ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field label {
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--olive);
+}
+.field input,
+.field textarea,
+.field select {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--coffee);
+  background: transparent;
+  border: 0;
+  border-bottom: 0.5px solid var(--olive);
+  padding: 10px 0;
+  outline: none;
+  transition: border-color var(--dur) var(--ease-soft);
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-bottom-color: var(--terracotta);
+}
+.field textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.6;
+}
+
+/* ---------- CHECK LIST ---------- */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.checklist li {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.checklist li::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  background: no-repeat center/contain;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%238A9A7B' stroke-width='1'><path d='M2 7.5 L6 11 L12 3'/></svg>");
+}
+.checklist--terracotta li::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23A85430' stroke-width='1'><path d='M2 7.5 L6 11 L12 3'/></svg>");
+}
+.checklist--amber li::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23C8862A' stroke-width='1'><path d='M2 7.5 L6 11 L12 3'/></svg>");
+}
+.checklist--x li::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%238A9A7B' stroke-width='1'><path d='M3 3 L11 11 M11 3 L3 11'/></svg>");
+}
+
+/* ---------- BADGE ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  border-radius: var(--r-pill);
+  border: 0.5px solid var(--terracotta);
+  color: var(--terracotta);
+  background: transparent;
+}
+.badge--filled {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+
+/* ---------- DIVIDERS ---------- */
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--sage);
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: "";
+  flex: 1;
+  height: 0;
+  border-top: 0.5px solid var(--line);
+  max-width: 120px;
+}
+
+/* ---------- CONTAINER / SECTION ---------- */
+.section {
+  padding: var(--s-10) var(--s-5);
+}
+.section--cream  { background: var(--cream); color: var(--fg); }
+.section--sand   { background: var(--sand); color: var(--fg); }
+.section--olive  { background: var(--olive); color: var(--cream); }
+.section--coffee { background: var(--coffee); color: var(--cream); }
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container--narrow { max-width: 780px; }
+
+/* ---------- GRID HELPERS ---------- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-5); }
+.grid-asym-40-60 { display: grid; grid-template-columns: 40fr 60fr; gap: var(--s-7); }
+.grid-asym-35-65 { display: grid; grid-template-columns: 35fr 65fr; gap: var(--s-7); }
+
+/* ---------- DECORATIVE ORNAMENTS (inline SVG class helpers) ---------- */
+.ornament {
+  display: inline-block;
+  color: var(--sage);
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1;
+}
